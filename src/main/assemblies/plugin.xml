@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<assembly>
+  <id>plugin</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <files>
+    <file>
+      <source>${project.build.directory}/${project.build.finalName}.${project.packaging}</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+    <file>
+      <source>${project.build.directory}/classes/plugin-descriptor.properties</source>
+      <outputDirectory>/</outputDirectory>
+    </file>
+  </files>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>/</outputDirectory>
+      <useProjectArtifact>true</useProjectArtifact>
+      <useTransitiveFiltering>true</useTransitiveFiltering>
+      <excludes>
+        <exclude>org.elasticsearch:elasticsearch</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+</assembly>
